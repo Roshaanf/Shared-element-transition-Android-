@@ -38,9 +38,15 @@ public class StartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         binding= DataBindingUtil.inflate(inflater,R.layout.fragment_start,container,false);
 
+
+        // setting transition name
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            binding.textView.setTransitionName(getString(R.string.text_view_transition_name));
+        }
 
 
         binding.imageView.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +54,11 @@ public class StartFragment extends Fragment {
             public void onClick(View view) {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    binding.textView.setTransitionName(getString(R.string.text_view_transition_name));
 
                     EndFragment endFragment=EndFragment.newInstance();
 
+//                    setSharedElementReturnTransition(TransitionInflater.from(
+//                            getActivity()).inflateTransition(android.R.transition.move));
 
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
