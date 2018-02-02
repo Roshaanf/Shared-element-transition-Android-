@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SharedElementTransition</string>
+    <string name="image_view_transition_name">Imageviewtransition</string>
+    <string name="text_view_transition_name">textviewtransition</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
