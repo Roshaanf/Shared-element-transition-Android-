@@ -10,6 +10,7 @@ import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.roshaan.sharedelementtransition.R;
@@ -24,11 +25,12 @@ import com.example.roshaan.sharedelementtransition.databinding.FragmentEndBindin
 public class EndFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    public static final String IMAGE_TRANSITION_KEY="OO";
 
-    public static EndFragment newInstance() {
+    public static EndFragment newInstance(String transitionName) {
 
         Bundle args = new Bundle();
-
+        args.putString(EndFragment.IMAGE_TRANSITION_KEY,transitionName);
         EndFragment fragment = new EndFragment();
         fragment.setArguments(args);
         return fragment;
@@ -45,9 +47,14 @@ public class EndFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v=inflater.inflate(R.layout.fragment_end, container, false);
 
+        ImageView iv=v.findViewById(R.id.imageView);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            iv.setTransitionName(getArguments().getString(EndFragment.IMAGE_TRANSITION_KEY));
+        }
 
-        return inflater.inflate(R.layout.fragment_end, container, false);
+        return v;
     }
 
     @Override

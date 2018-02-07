@@ -18,7 +18,7 @@
             android:layout_marginBottom="8dp"
             android:onClick="activity"
             android:text="Activity transition"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@id/button3"
             app:layout_constraintEnd_toStartOf="@id/button2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,6 +33,16 @@
             app:layout_constraintStart_toEndOf="@+id/button"
             app:layout_constraintTop_toTopOf="@+id/button" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="fragmentRecycler"
+            android:text="Recycler View fragment transition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
@@ -44,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"></LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/button3"></LinearLayout>
 
 
     </android.support.constraint.ConstraintLayout>

@@ -55,10 +55,14 @@ public class StartFragment extends Fragment {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-                    EndFragment endFragment=EndFragment.newInstance();
+                    EndFragment endFragment=EndFragment.newInstance(getString(R.string.image_view_transition_name));
 
-//                    setSharedElementReturnTransition(TransitionInflater.from(
-//                            getActivity()).inflateTransition(android.R.transition.move));
+//                    StartRecyclerFragment.this.setSharedElementReturnTransition(TransitionInflater.from(getActivity()).inflateTransition(android.R.transition.move));
+//                    StartRecyclerFragment.this.setExitTransition(TransitionInflater.from(getActivity()).inflateTransition(android.R.transition.no_transition));
+//
+//                    endFragment.setSharedElementEnterTransition(TransitionInflater.from(getActivity()).inflateTransition(android.R.transition.move));
+//                    endFragment.setEnterTransition(TransitionInflater.from(getActivity()).inflateTransition(android.R.transition.no_transition));
+
 
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
